@@ -72,43 +72,37 @@ function myMultiplication(x, y) {
 // переданного значения операции (использовать switch) выполнить одну из арифметических операций
 // (использовать функции из задания 4) и вернуть полученное значение.
 
-/*function mathOperation(arg1, arg2, operation) { // сначала подумал так надо, потом почитал задание внимательнее
+function mathOperation_1(arg1, arg2, operation) { // сначала подумал так надо, потом почитал задание внимательнее
     return operation(arg1, arg2)
 }
 
-console.log(mathOperation(5, 2, myAddition))
-console.log(mathOperation(5, 2, mySubtraction))
-console.log(mathOperation(5, 2, myDivision))
-console.log(mathOperation(5, 2, myMultiplication))
-*/
+console.log(mathOperation_1(5, 2, myAddition))
+console.log(mathOperation_1(5, 2, mySubtraction))
+console.log(mathOperation_1(5, 2, myDivision))
+console.log(mathOperation_1(5, 2, myMultiplication))
 
-function mathOperation(arg1, arg2, operation) {
+
+function mathOperation_2(arg1, arg2, operation) {
     // add || sub || div || mul
     switch (operation) {
         case "add":
             return `arg1: ${arg1}, arg2: ${arg2}, operation: ${operation} = ${(arg1 + arg2)}`;
-            // понимаю, что с return лучше не использовать такие конструкции (присвоение и др операции усложняются)
-            break;
         case "sub":
             return `arg1: ${arg1}, arg2: ${arg2}, operation: ${operation} = ${(arg1 - arg2)}`;
-            // делаю ради тренировки и наглядности
-            break;
         case "div":
             return `arg1: ${arg1}, arg2: ${arg2}, operation: ${operation} = ${(arg1 / arg2)}`;
-            break;
         case "mul":
             return `arg1: ${arg1}, arg2: ${arg2}, operation: ${operation} = ${(arg1 * arg2)}`;
-            break;
         default:
             return `arg1: ${arg1}, arg2: ${arg2}, operation: ${operation} !!!операция не предусмотрена`
     }
 }
 
-console.log(mathOperation(5, 2, "add"))
-console.log(mathOperation(5, 2, "sub"))
-console.log(mathOperation(5, 2, "div"))
-console.log(mathOperation(5, 2, "mul"))
-console.log(mathOperation(5, 2, "dul"))
+console.log(mathOperation_2(5, 2, "add"))
+console.log(mathOperation_2(5, 2, "sub"))
+console.log(mathOperation_2(5, 2, "div"))
+console.log(mathOperation_2(5, 2, "mul"))
+console.log(mathOperation_2(5, 2, "dul"))
 
 
 
@@ -144,6 +138,3 @@ switch (endMoney) {
     default:
         alert("Укажите корректую сумму для зачисления на счет")
 }
-
-// правильно ли я понял, что в задании нетребуется проверить на целостность число и что это вообще число,
-// а не произвольная строка с числом на конце (ыбфыадлоыд23)?

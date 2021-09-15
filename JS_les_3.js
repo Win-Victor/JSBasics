@@ -203,11 +203,11 @@ console.log('*****4.2*****')
 products_1.sort(function (item1, item2) {
     if (item1.price > item2.price) {
         return 1;
-    } else if (item1.price < item2.price) {
+    } 
+    if (item1.price < item2.price) {
         return -1;
-    } else {
-        return 0;
-    }
+    } 
+    return 0;
 });
 
 console.log(products_1);

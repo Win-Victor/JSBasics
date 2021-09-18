@@ -29,11 +29,11 @@ function myNumber(num) {
             tens: Math.floor((num % 100) / 10),
             hundreds: Math.floor(num / 100, 1)
         }
-        return console.log(num), obj;
-    } else {
-        console.log(num + " - данные не соответствуют условию")
-        return {};
+        console.log(num);
+        return obj;
     }
+    console.log(num + " - данные не соответствуют условию");
+    return {};
 }
 
 
@@ -58,7 +58,7 @@ function Product(name, price) {
 
 Product.prototype.make25PercentDiscount = function () {
     this.price *= 0.75;
-}
+};
 const product1 = new Product('siemens_a35', 1000);
 console.log(product1);
 
@@ -129,12 +129,10 @@ console.log('\n*************************', "б", '*************************')
 
 function AttachedPost(author, text, date) {
     Post.call(this, author, text, date);
+    this.highlighted = false;
 }
 
-AttachedPost.prototype.highlighted = false;
-
 AttachedPost.prototype = Object.create(Post.prototype);
-
 AttachedPost.prototype.constructor = AttachedPost;
 
 AttachedPost.prototype.makeTextHighlighted = function () {
@@ -165,15 +163,10 @@ class AttachedPostClass extends PostClass {
 const objAttachedPostClass = new AttachedPostClass('Alexandr', 'bla-la-la la-la', '01.04.2021');
 
 console.log(objAttachedPostClass);
-
 objAttachedPostClass.makeTextHighlighted();
-
 console.log(objAttachedPostClass);
-
 objAttachedPostClass.edit('new text from method edit')
-
 console.log(objAttachedPostClass);
-
 console.log('\n*************************', 2, '*************************')
 /* 2 (это задание не является частью учебной программы, делайте его по желанию). Для игры бродилка (которая
 есть в дополнительных видео), добавить возможность ходить по диагонали цифрами 1, 3, 7, 9.
